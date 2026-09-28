@@ -1,50 +1,92 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report
+Version change: uninitialized -> 1.0.0
+Modified principles:
+- PRINCIPLE_1_NAME -> I. Specification Before Implementation
+- PRINCIPLE_2_NAME -> II. Incremental Development
+- PRINCIPLE_3_NAME -> III. Input Validation and Clear Code
+- PRINCIPLE_4_NAME -> IV. Decisions and Meaningful Git History
+- PRINCIPLE_5_NAME -> V. Responsible AI Use
+Added sections:
+- SECTION_2_NAME -> Project Constraints
+- SECTION_3_NAME -> Development Workflow and Quality Gates
+Removed sections: None
+Follow-up TODOs:
+- Ratification date confirmed as 2026-09-28; this constitution was recorded after initial
+	feature development and does not claim prior adoption.
+-->
+
+# To-Do Project Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Specification Before Implementation
+Every feature MUST have a written specification before implementation begins. The
+specification MUST state the user need, scope, and acceptance criteria. Ambiguities that
+could change behavior or scope MUST be resolved in the specification before coding. This
+keeps implementation tied to an agreed outcome and reduces avoidable rework.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Incremental Development
+Changes MUST be delivered in small, reviewable increments. Each increment MUST preserve
+existing working behavior and be checked against its relevant acceptance criteria before
+the next increment begins. Large changes MUST be divided into independently verifiable
+steps so failures can be localized and progress remains clear.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Input Validation and Clear Code
+User-provided input MUST be validated before it changes application state. Invalid input
+MUST be rejected with behavior consistent with the specification. Code MUST use meaningful
+names, focused functions, and straightforward control flow; unnecessary dependencies and
+abstractions MUST NOT be introduced. These rules keep browser behavior predictable and
+make the code understandable to the student maintaining it.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Decisions and Meaningful Git History
+Important technical or product decisions MUST be recorded in the relevant project
+documentation with their context and rationale. Each Git commit MUST represent a coherent,
+scoped change, and its message MUST describe the change rather than use a generic label.
+This preserves the reasoning behind the project and makes its history useful for review.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Responsible AI Use
+AI tools MAY be used for learning, planning, and implementation. Before submitting AI-
+assisted work, the student MUST inspect and verify it and MUST be able to explain its
+behavior and important tradeoffs. The student remains responsible for the correctness,
+quality, and consequences of all submitted work; AI output is not a substitute for
+understanding or validation.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Project Constraints
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+The current application is a browser-only single-page app built with HTML, CSS, and
+JavaScript. It MUST NOT add a backend, database, or persistent storage unless a revised
+specification explicitly expands the project scope. New dependencies or architectural
+changes MUST have a documented need and be consistent with the approved specification.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+Existing application behavior and approved feature specifications MUST be preserved by
+default. A change that intentionally alters either MUST identify the affected behavior and
+update the relevant specification before implementation.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Development Workflow and Quality Gates
+
+1. Write or revise the feature specification and acceptance criteria before implementation.
+2. Break approved work into small tasks with clear outcomes and dependencies when planning
+	is needed.
+3. Implement one increment at a time and keep changes limited to the approved scope.
+4. Verify changed behavior against its acceptance criteria, including relevant invalid-input
+	cases. Use browser checks or automated tests appropriate to the change.
+5. Record important decisions and meaningful implementation or verification outcomes in
+	project documentation. A task MUST NOT be reported complete without evidence that its
+	expected behavior was implemented or checked.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution was recorded after the initial feature development. It governs work from
+its adoption onward and does not assert that earlier work followed these rules. Any
+retrospective assessment of existing work MUST distinguish observed evidence from
+assumptions.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+Amendments MUST include a rationale, an updated amendment date, and a Sync Impact Report.
+Version numbers follow semantic versioning: MAJOR for incompatible governance changes,
+MINOR for new principles or materially expanded requirements, and PATCH for clarifications
+that do not change obligations. Reviews MUST check proposed work against this constitution
+and its specification, and MUST report unverified requirements as unverified rather than
+marking them complete.
+
+**Version**: 1.0.0 | **Ratified**: 2026-09-28 | **Last Amended**: 2026-09-28
